@@ -1,0 +1,12 @@
+{
+  "name": "gympie-inflatable-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Gympie Inflatable Nightclub",
+  "scripts": {
+    "dev": "npx http-server -p 3000 -c-1 --cors -o pages/Home.html",
+    "start": "npx http-server -p 3000 -c-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
