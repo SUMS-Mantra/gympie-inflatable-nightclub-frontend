@@ -46,4 +46,20 @@ Open `Home.html` in a browser or serve with:
 npx http-server -p 3000
 ```
 
-For production, deploy to Netlify/Vercel - see `PRODUCTION_DEPLOYMENT.md`.
+---
+
+## Render Deployment
+
+1. **Create a Static Site on Render**
+	- Connect this repo to Render.
+	- Set the publish directory to `pages` (or root if serving all files).
+	- No build command needed for pure HTML/CSS/JS.
+2. **Environment Variables**
+	- If you use any, set them in Render dashboard (not typical for static sites).
+3. **Automatic Deploys**
+	- Enable auto-deploys from GitHub for continuous updates.
+
+---
+
+### Useful Links
+- [Render Static Site Docs](https://render.com/docs/static-sites)
