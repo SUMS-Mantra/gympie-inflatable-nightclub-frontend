@@ -7,6 +7,7 @@
     <title>Contact Us - Gympie Inflatable Nightclub</title>
     <link rel="icon" type="image/png" href="../Full Logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +35,10 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
         }
+
+        .card-elevated {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.05);
+        }
     </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
@@ -44,16 +49,16 @@
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-24 md:h-28 w-auto">
+                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 md:h-20 w-auto">
                     <span class="text-xl font-bold text-white">Gympie Inflatable</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="Home.html" class="text-white hover:text-blue-400 transition-colors duration-300">Home</a>
-                    <a href="Home.html#packages" class="text-white hover:text-blue-400 transition-colors duration-300">Packages</a>
-                    <a href="about.html" class="text-white hover:text-blue-400 transition-colors duration-300">About</a>
-                    <a href="contact.html" class="text-blue-400 font-semibold">Contact</a>
+                    <a href="Home.html" class="text-white hover:text-blue-400 transition-colors duration-300 relative group">Home<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="Home.html#packages" class="text-white hover:text-blue-400 transition-colors duration-300 relative group">Packages<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="about.html" class="text-white hover:text-blue-400 transition-colors duration-300 relative group">About<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="contact.html" class="text-blue-400 font-semibold relative group">Contact<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400"></span></a>
                     <a href="bookings.html" class="btn-primary px-6 py-2 rounded-full text-white font-semibold hover:shadow-lg transition-all duration-300">
                         Book Now
                     </a>
@@ -89,21 +94,21 @@
             <div class="text-center mb-16">
                 <!-- Logo -->
                 <div class="mb-8 flex justify-center pt-16">
-                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-32 md:h-40 w-auto drop-shadow-2xl">
+                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-28 md:h-36 w-auto drop-shadow-2xl">
                 </div>
-                <h1 class="text-4xl md:text-6xl font-bold font-montserrat mb-6">
+                <h1 class="text-3xl md:text-4xl font-bold font-montserrat mb-6 tracking-tight">
                     Contact <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Us</span>
                 </h1>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-base text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Get in touch with us for bookings, questions, or more information about our amazing inflatable nightclub experience.
                 </p>
             </div>
 
             <!-- Contact Information -->
             <div class="max-w-4xl mx-auto">
-                <div class="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-700 backdrop-blur-sm">
+                <div class="bg-gray-900 rounded-2xl p-8 border border-gray-800 card-elevated">
                     <div class="text-center mb-8">
-                        <h2 class="text-2xl font-bold mb-4">Ready to Party?</h2>
+                        <h2 class="text-xl font-bold mb-4 tracking-tight">Ready to Party?</h2>
                         <p class="text-gray-300">Contact us today to book your unforgettable event!</p>
                     </div>
                     
@@ -111,9 +116,7 @@
                         <div class="space-y-6">
                             <div class="flex items-center space-x-4">
                                 <div class="bg-blue-600 p-3 rounded-full">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
+                                    <i data-lucide="mail" class="w-6 h-6 text-white"></i>
                                 </div>
                                 <div>
                                     <h3 class="font-semibold text-blue-400">Email</h3>
@@ -122,21 +125,19 @@
                             </div>
                             
                             <div class="flex items-center space-x-4">
-                                <div class="bg-red-600 p-3 rounded-full">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                    </svg>
+                                <div class="bg-blue-600 p-3 rounded-full">
+                                    <i data-lucide="phone" class="w-6 h-6 text-white"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-semibold text-red-400">Phone</h3>
+                                    <h3 class="font-semibold text-blue-400">Phone</h3>
                                     <p class="text-gray-300">0431220011</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="flex items-center justify-center">
-                            <a href="mailto:gympieinflatable.25@gmail.com" class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
-                                📧 Email Us Now
+                            <a href="mailto:gympieinflatable.25@gmail.com" class="btn-primary px-8 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 shadow-xl inline-flex items-center gap-2">
+                                <i data-lucide="mail" class="w-5 h-5"></i> Email Us Now
                             </a>
                         </div>
                     </div>
@@ -172,7 +173,7 @@
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <!-- Logo & Description -->
                 <div class="md:col-span-1">
-                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-20 w-auto mb-4">
+                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 w-auto mb-4">
                     <p class="text-gray-400 text-sm">The ultimate party experience in Gympie. Professional inflatable nightclub and cinema setup for unforgettable events.</p>
                 </div>
                 
@@ -191,17 +192,19 @@
                 <div>
                     <h4 class="text-white font-bold mb-4">Contact Us</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
-                        <li>📧 gympieinflatable.25@gmail.com</li>
-                        <li>📱 0431 220 011</li>
-                        <li>📍 Gympie, Queensland</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-blue-400"></i> gympieinflatable.25@gmail.com</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-blue-400"></i> 0431 220 011</li>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-blue-400"></i> Gympie, Queensland</li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500 text-sm">&copy; 2025 Gympie Inflatable Nightclub. All rights reserved.</p>
+                <p class="text-gray-500 text-sm">&copy; 2026 Gympie Inflatable Nightclub. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>lucide.createIcons();</script>
 </body>
 </html>

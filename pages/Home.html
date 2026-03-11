@@ -1,10 +1,4 @@
-Access to fetch at 'https://your-backend-url.com/api/bookings' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.Understand this error
-calendar-bookings-new.js:111  GET https://your-backend-url.com/api/bookings net::ERR_FAILED 302 (Found)
-redirectToSurvey @ calendar-bookings-new.js:111
-onclick @ bookings.html:1Understand this error
-calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed to fetch
-    at redirectToSurvey (calendar-bookings-new.js:111:28)
-    at HTMLDivElement.onclick (bookings.html:1:1)<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
@@ -14,6 +8,7 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
     <title>Gympie Inflatable Nightclub | Ultimate Party Experience</title>
     <link rel="icon" type="image/png" href="../Full Logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,15 +58,16 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
         }
         
         .btn-secondary {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
+            border: 2px solid #ffffff;
             color: #ffffff;
+            background: transparent;
             transition: all 0.3s ease;
         }
         
         .btn-secondary:hover {
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            background: #ffffff;
+            color: #000000;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
         }
         
         /* Package selection styles */
@@ -95,6 +91,24 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        /* Card depth */
+        .card-elevated {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.05);
+        }
+        .card-elevated:hover {
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59,130,246,0.2);
+        }
+
+        /* Noise texture overlay */
+        .noise-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
     </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
@@ -105,15 +119,16 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-24 md:h-28 w-auto">
+                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 md:h-20 w-auto">
+                    <span class="text-xl font-bold text-white">Gympie Inflatable</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-white hover:text-blue-400 transition-colors duration-300">Home</a>
-                    <a href="#packages" class="text-white hover:text-blue-400 transition-colors duration-300">Packages</a>
-                    <a href="about.html" class="text-white hover:text-blue-400 transition-colors duration-300">About</a>
-                    <a href="contact.html" class="text-white hover:text-blue-400 transition-colors duration-300">Contact</a>
+                    <a href="Home.html" class="text-blue-400 font-semibold relative group">Home<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400"></span></a>
+                    <a href="Home.html#packages" class="text-white hover:text-blue-400 transition-colors duration-300 relative group">Packages<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="about.html" class="text-white hover:text-blue-400 transition-colors duration-300 relative group">About<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="contact.html" class="text-white hover:text-blue-400 transition-colors duration-300 relative group">Contact<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span></a>
                     <a href="bookings.html" class="btn-primary px-6 py-2 rounded-full text-white font-semibold hover:shadow-lg transition-all duration-300">
                         Book Now
                     </a>
@@ -130,8 +145,8 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
                 <div class="flex flex-col space-y-4">
-                    <a href="#home" class="text-white hover:text-blue-400 transition-colors duration-300">Home</a>
-                    <a href="#packages" class="text-white hover:text-blue-400 transition-colors duration-300">Packages</a>
+                    <a href="Home.html" class="text-blue-400 font-semibold">Home</a>
+                    <a href="Home.html#packages" class="text-white hover:text-blue-400 transition-colors duration-300">Packages</a>
                     <a href="about.html" class="text-white hover:text-blue-400 transition-colors duration-300">About</a>
                     <a href="contact.html" class="text-white hover:text-blue-400 transition-colors duration-300">Contact</a>
                     <a href="bookings.html" class="btn-primary px-6 py-2 rounded-full text-white font-semibold inline-block text-center">
@@ -143,7 +158,7 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
     </header>
 
     <!-- Modern Hero Section with Full-Width Background -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden noise-overlay">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
             <img src="../Nightclub_Main.jpg" alt="Nightclub Background" class="w-full h-full object-cover">
@@ -157,32 +172,28 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
                 <div class="mb-8 flex justify-center">
                     <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-48 md:h-64 lg:h-80 w-auto drop-shadow-2xl animate-scale-in">
                 </div>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black font-montserrat mb-6 leading-none">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black font-montserrat mb-6 leading-none tracking-tight">
                     <span class="block text-white">PARTY</span>
-                    <span class="block bg-gradient-to-r from-blue-400 via-red-400 to-blue-500 bg-clip-text text-transparent">LIKE NEVER</span>
+                    <span class="block bg-gradient-to-r from-blue-400 via-blue-300 to-blue-500 bg-clip-text text-transparent">LIKE NEVER</span>
                     <span class="block text-white">BEFORE</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-base md:text-lg text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
                     Gympie's premier inflatable nightclub experience. Professional setup, premium sound, stunning lights.
                 </p>
                 
                 <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                    <a href="bookings.html" class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
-                        🎉 Book Your Event
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="bookings.html" class="btn-primary px-8 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 shadow-xl inline-flex items-center gap-2">
+                        <i data-lucide="calendar-check" class="w-5 h-5"></i> Book Your Event
                     </a>
-                    <a href="#packages" class="border-2 border-white text-white hover:bg-white hover:text-black font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
-                        View Packages
+                    <div class="animate-bounce">
+                        <i data-lucide="chevron-down" class="w-8 h-8 text-white/60"></i>
+                    </div>
+                    <a href="#packages" class="btn-secondary px-8 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
+                        <i data-lucide="package" class="w-5 h-5"></i> View Packages
                     </a>
                 </div>
             </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
         </div>
     </section>
 
@@ -190,10 +201,10 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
     <section class="py-20 bg-gradient-to-b from-black to-gray-900">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-bold font-montserrat mb-6">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-6 tracking-tight">
                     The <span class="text-blue-400">Ultimate</span> Experience
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-base text-gray-300 max-w-3xl mx-auto">
                     Step into our inflatable nightclub and transform any space into an unforgettable party destination
                 </p>
             </div>
@@ -201,47 +212,47 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
             <!-- Experience Cards Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <!-- Nightclub Experience -->
-                <div class="group relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-700 hover:border-blue-400 transition-all duration-500 transform hover:-translate-y-2">
+                <div class="group relative bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-blue-500/40 transition-all duration-500 transform hover:-translate-y-2 card-elevated">
                     <div class="absolute top-4 right-4">
                         <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Popular</span>
                     </div>
-                    <div class="text-6xl mb-6">🎭</div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Nightclub Vibes</h3>
-                    <p class="text-gray-400 mb-6">Professional lighting, smoke effects, and sound system create an authentic nightclub atmosphere</p>
+                    <div class="mb-6 text-blue-400"><i data-lucide="disc-3" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Nightclub Vibes</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Professional lighting, smoke effects, and sound system create an authentic nightclub atmosphere</p>
                     <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center"><span class="text-blue-400 mr-2">✓</span> Laser light show</li>
-                        <li class="flex items-center"><span class="text-blue-400 mr-2">✓</span> Smoke machine</li>
-                        <li class="flex items-center"><span class="text-blue-400 mr-2">✓</span> Premium sound system</li>
-                        <li class="flex items-center"><span class="text-blue-400 mr-2">✓</span> DJ playlist</li>
+                        <li class="flex items-center"><span class="text-blue-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> Laser light show</li>
+                        <li class="flex items-center"><span class="text-blue-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> Smoke machine</li>
+                        <li class="flex items-center"><span class="text-blue-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> Premium sound system</li>
+                        <li class="flex items-center"><span class="text-blue-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> DJ playlist</li>
                     </ul>
                 </div>
                 
                 <!-- Cinema Experience -->
-                <div class="group relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-700 hover:border-red-400 transition-all duration-500 transform hover:-translate-y-2">
-                    <div class="text-6xl mb-6">🎬</div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Cinema Setup</h3>
-                    <p class="text-gray-400 mb-6">Transform your space into a private cinema with our massive screen and crystal-clear projection</p>
+                <div class="group relative bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-blue-500/40 transition-all duration-500 transform hover:-translate-y-2 card-elevated">
+                    <div class="mb-6 text-blue-400"><i data-lucide="clapperboard" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Cinema Setup</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Transform your space into a private cinema with our massive screen and crystal-clear projection</p>
                     <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center"><span class="text-red-400 mr-2">✓</span> Large cinema screen</li>
-                        <li class="flex items-center"><span class="text-red-400 mr-2">✓</span> HD projector</li>
-                        <li class="flex items-center"><span class="text-red-400 mr-2">✓</span> Surround sound</li>
-                        <li class="flex items-center"><span class="text-red-400 mr-2">✓</span> Comfortable seating</li>
+                        <li class="flex items-center"><span class="text-blue-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> Large cinema screen</li>
+                        <li class="flex items-center"><span class="text-blue-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> HD projector</li>
+                        <li class="flex items-center"><span class="text-blue-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> Surround sound</li>
+                        <li class="flex items-center"><span class="text-blue-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> Comfortable seating</li>
                     </ul>
                 </div>
                 
                 <!-- Complete Package -->
-                <div class="group relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-700 hover:border-green-400 transition-all duration-500 transform hover:-translate-y-2 md:col-span-2 lg:col-span-1">
+                <div class="group relative bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-green-500/40 transition-all duration-500 transform hover:-translate-y-2 md:col-span-2 lg:col-span-1 card-elevated">
                     <div class="absolute top-4 right-4">
                         <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Best Value</span>
                     </div>
-                    <div class="text-6xl mb-6">🎉</div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Complete Package</h3>
-                    <p class="text-gray-400 mb-6">Get everything! Switch between nightclub and cinema modes for the ultimate party experience</p>
+                    <div class="mb-6 text-green-400"><i data-lucide="sparkles" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Complete Package</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Get everything! Switch between nightclub and cinema modes for the ultimate party experience</p>
                     <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> All nightclub features</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> All cinema features</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Professional setup</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> 24/7 support</li>
+                        <li class="flex items-center"><span class="text-green-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> All nightclub features</li>
+                        <li class="flex items-center"><span class="text-green-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> All cinema features</li>
+                        <li class="flex items-center"><span class="text-green-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> Professional setup</li>
+                        <li class="flex items-center"><span class="text-green-400 mr-2"><i data-lucide="check" class="w-4 h-4 inline"></i></span> 24/7 support</li>
                     </ul>
                 </div>
             </div>
@@ -252,10 +263,10 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
     <section id="packages" class="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-bold font-montserrat mb-6">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-6 tracking-tight">
                     Choose Your <span class="text-blue-400">Package</span>
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-base text-gray-300 max-w-3xl mx-auto">
                     Professional packages designed to make your event unforgettable
                 </p>
             </div>
@@ -263,90 +274,90 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
             <!-- Pricing Cards -->
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Club Package -->
-                <div class="relative bg-gradient-to-br from-blue-900/50 to-blue-800/50 backdrop-blur-sm rounded-3xl p-8 border border-blue-500/30 hover:border-blue-400 transition-all duration-500 transform hover:scale-105 group">
+                <div class="relative bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-blue-500/40 transition-all duration-500 transform hover:scale-105 group card-elevated">
                     <div class="text-center mb-8">
-                        <div class="text-5xl mb-4">🎭</div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Nightclub Setup</h3>
-                        <p class="text-gray-300 mb-6">Perfect for parties and celebrations</p>
-                        <div class="text-4xl font-bold text-blue-400 mb-2">$350</div>
+                        <div class="mb-4 text-blue-400 flex justify-center"><i data-lucide="disc-3" class="w-10 h-10"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-2">Nightclub Setup</h3>
+                        <p class="text-gray-300 mb-6 text-sm">Perfect for parties and celebrations</p>
+                        <div class="text-4xl font-bold text-blue-400 mb-2">$299</div>
                         <div class="text-sm text-gray-400">per event</div>
                     </div>
                     
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center text-gray-300">
-                            <span class="text-blue-400 mr-3">✓</span>
+                            <span class="text-blue-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Inflatable nightclub setup
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-blue-400 mr-3">✓</span>
+                            <span class="text-blue-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Professional lighting system
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-blue-400 mr-3">✓</span>
+                            <span class="text-blue-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Smoke machine effects
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-blue-400 mr-3">✓</span>
+                            <span class="text-blue-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Premium sound system
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-blue-400 mr-3">✓</span>
+                            <span class="text-blue-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Professional setup & removal
                         </li>
                     </ul>
                     
-                    <button onclick="selectPackage('Club Setup')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-full transition-all duration-300 transform group-hover:scale-105">
+                    <button onclick="selectPackage('Club Setup')" class="w-full btn-primary font-bold py-3 px-6 rounded-full transition-all duration-300 transform group-hover:scale-105">
                         Select Package
                     </button>
                 </div>
                 
                 <!-- Cinema Package -->
-                <div class="relative bg-gradient-to-br from-red-900/50 to-red-800/50 backdrop-blur-sm rounded-3xl p-8 border border-red-500/30 hover:border-red-400 transition-all duration-500 transform hover:scale-105 group">
+                <div class="relative bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-blue-500/40 transition-all duration-500 transform hover:scale-105 group card-elevated">
                     <div class="text-center mb-8">
-                        <div class="text-5xl mb-4">🎬</div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Cinema Setup</h3>
-                        <p class="text-gray-300 mb-6">Movie nights and entertainment</p>
-                        <div class="text-4xl font-bold text-red-400 mb-2">$150</div>
+                        <div class="mb-4 text-blue-400 flex justify-center"><i data-lucide="clapperboard" class="w-10 h-10"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cinema Setup</h3>
+                        <p class="text-gray-300 mb-6 text-sm">Movie nights and entertainment</p>
+                        <div class="text-4xl font-bold text-blue-400 mb-2">$349</div>
                         <div class="text-sm text-gray-400">per event</div>
                     </div>
                     
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center text-gray-300">
-                            <span class="text-red-400 mr-3">✓</span>
+                            <span class="text-blue-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Large cinema screen setup
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-red-400 mr-3">✓</span>
+                            <span class="text-blue-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             HD projector system
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-red-400 mr-3">✓</span>
+                            <span class="text-blue-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Surround sound audio
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-red-400 mr-3">✓</span>
+                            <span class="text-blue-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Additional speaker system
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-red-400 mr-3">✓</span>
+                            <span class="text-blue-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Professional setup & removal
                         </li>
                     </ul>
                     
-                    <button onclick="selectPackage('Cinema Setup')" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-full transition-all duration-300 transform group-hover:scale-105">
+                    <button onclick="selectPackage('Cinema Setup')" class="w-full btn-primary font-bold py-3 px-6 rounded-full transition-all duration-300 transform group-hover:scale-105">
                         Select Package
                     </button>
                 </div>
                 
                 <!-- Complete Package -->
-                <div class="relative bg-gradient-to-br from-green-900/50 to-green-800/50 backdrop-blur-sm rounded-3xl p-8 border border-green-500/30 hover:border-green-400 transition-all duration-500 transform hover:scale-105 group">
+                <div class="relative bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-green-500/40 transition-all duration-500 transform hover:scale-105 group card-elevated">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
                         <span class="bg-green-500 text-white px-6 py-2 rounded-full text-sm font-bold">MOST POPULAR</span>
                     </div>
                     <div class="text-center mb-8 mt-4">
-                        <div class="text-5xl mb-4">🎉</div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Complete Package</h3>
-                        <p class="text-gray-300 mb-6">Everything included - best value!</p>
+                        <div class="mb-4 text-green-400 flex justify-center"><i data-lucide="sparkles" class="w-10 h-10"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-2">Complete Package</h3>
+                        <p class="text-gray-300 mb-6 text-sm">Everything included - best value!</p>
                         <div class="text-4xl font-bold text-green-400 mb-2">$499</div>
                         <div class="text-sm text-gray-400">per event</div>
                         <div class="text-xs text-green-400 mt-1">Save $149!</div>
@@ -354,29 +365,29 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
                     
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center text-gray-300">
-                            <span class="text-green-400 mr-3">✓</span>
+                            <span class="text-green-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Everything from both packages
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-green-400 mr-3">✓</span>
+                            <span class="text-green-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Switch between modes anytime
                         </li>
                         <li class="flex items-center text-gray-300">
                   
-                            <span class="text-green-400 mr-3">✓</span>
+                            <span class="text-green-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Extended setup time
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-green-400 mr-3">✓</span>
+                            <span class="text-green-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Priority booking support
                         </li>
                         <li class="flex items-center text-gray-300">
-                            <span class="text-green-400 mr-3">✓</span>
+                            <span class="text-green-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Free setup consultation
                         </li>
                     </ul>
                     
-                    <button onclick="selectPackage('Complete Package')" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-full transition-all duration-300 transform group-hover:scale-105">
+                    <button onclick="selectPackage('Complete Package')" class="w-full btn-primary font-bold py-3 px-6 rounded-full transition-all duration-300 transform group-hover:scale-105">
                         Select Package
                     </button>
                 </div>
@@ -387,18 +398,18 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
     <!-- Call to Action Section -->
     <section class="py-20 bg-gradient-to-r from-blue-900 via-black to-red-900">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-6xl font-bold font-montserrat mb-6 text-white">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-6 text-white tracking-tight">
                 Ready to <span class="text-blue-400">Party?</span>
             </h2>
-            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p class="text-base text-gray-300 mb-8 max-w-3xl mx-auto">
                 Don't wait - book your unforgettable inflatable nightclub experience today!
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="bookings.html" class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
-                    🎉 Book Now
+                <a href="bookings.html" class="btn-primary px-8 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 shadow-xl inline-flex items-center gap-2">
+                    <i data-lucide="calendar-check" class="w-5 h-5"></i> Book Now
                 </a>
-                <a href="contact.html" class="border-2 border-white text-white hover:bg-white hover:text-black font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
-                    Get Quote
+                <a href="contact.html" class="btn-secondary px-8 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> Get Quote
                 </a>
             </div>
         </div>
@@ -473,7 +484,7 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <!-- Logo & Description -->
                 <div class="md:col-span-1">
-                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-20 w-auto mb-4">
+                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 w-auto mb-4">
                     <p class="text-gray-400 text-sm">The ultimate party experience in Gympie. Professional inflatable nightclub and cinema setup for unforgettable events.</p>
                 </div>
                 
@@ -492,17 +503,19 @@ calendar-bookings-new.js:124 Error checking date availability: TypeError: Failed
                 <div>
                     <h4 class="text-white font-bold mb-4">Contact Us</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
-                        <li>📧 gympieinflatable.25@gmail.com</li>
-                        <li>📱 0431 220 011</li>
-                        <li>📍 Gympie, Queensland</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-blue-400"></i> gympieinflatable.25@gmail.com</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-blue-400"></i> 0431 220 011</li>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-blue-400"></i> Gympie, Queensland</li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500 text-sm">&copy; 2025 Gympie Inflatable Nightclub. All rights reserved.</p>
+                <p class="text-gray-500 text-sm">&copy; 2026 Gympie Inflatable Nightclub. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>lucide.createIcons();</script>
 </body>
 </html>
