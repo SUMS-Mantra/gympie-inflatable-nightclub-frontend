@@ -298,8 +298,12 @@ function openSurvey(date) {
       const dateInput = modal.querySelector('input[name="partyDate"]');
       if (dateInput) dateInput.value = date;
     }
+    // Close mobile menu if open
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) mobileMenu.classList.add('hidden');
     modal.classList.remove('hidden');
     modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
     currentStepNum = 1;
     setTimeout(() => {
       showStep(1);
@@ -479,6 +483,7 @@ function closeSurvey() {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
   }
+  document.body.style.overflow = '';
   if (form) form.reset();
   currentStepNum = 1;
 }
