@@ -13,11 +13,8 @@ const getApiUrl = () => {
     return 'http://localhost:8080';
   }
   
-  // In production, use environment variable or throw error
-  if (!window.ENV_API_URL) {
-    console.error('⚠️ Production API URL not configured! Set window.ENV_API_URL');
-  }
-  return window.ENV_API_URL || 'http://localhost:8080'; // Fallback to localhost
+  // In production, use the Render backend
+  return 'https://gympie-inflatable-nightclub-backend.onrender.com';
 };
 
 const API_BASE_URL = getApiUrl();

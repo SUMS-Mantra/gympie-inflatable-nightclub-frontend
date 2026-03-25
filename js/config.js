@@ -10,9 +10,7 @@ const API_CONFIG = {
     if (this.isDevelopment) {
       return 'http://localhost:8080';
     }
-    // For production, use environment variable or default
-    // You can set this during build or deployment
-    return window.ENV_API_URL || 'https://your-backend-url.com';
+    return 'https://gympie-inflatable-nightclub-backend.onrender.com';
   },
   
   // API endpoints
