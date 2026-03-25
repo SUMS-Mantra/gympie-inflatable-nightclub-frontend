@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Book your Gympie Inflatable Nightclub experience. Check availability and reserve your date for an unforgettable party." />
   <title>Book Your Event - Gympie Inflatable Nightclub</title>
-  <link rel="icon" type="image/png" href="../Full Logo.png" />
+  <link rel="icon" type="image/png" href="Full Logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="../js/calendar-bookings-new.js"></script>
+  <script src="js/calendar-bookings-new.js"></script>
   <style>
     body { font-family: 'Poppins', sans-serif; }
     h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
     
-    /* Custom animations */
     @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(30px); }
         to { opacity: 1; transform: translateY(0); }
@@ -25,12 +24,12 @@
     
     .animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
     
-    /* Glassmorphism header */
     .glass-header {
       backdrop-filter: blur(10px);
       background: rgba(0, 0, 0, 0.8);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }    /* Button hover effects */
+    }
+
     .btn-primary {
         background: linear-gradient(135deg, #3b82f6, #1d4ed8);
         color: #ffffff;
@@ -43,7 +42,6 @@
         background: linear-gradient(135deg, #2563eb, #1e40af);
     }
     
-    /* Modal animations */
     .modal-enter {
         animation: modalEnter 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
@@ -53,7 +51,6 @@
         to { opacity: 1; transform: scale(1) translateY(0); }
     }
     
-    /* Package selection styles */
     .package-option input[type="radio"]:checked + .package-card {
         border-color: #3b82f6;
         background: rgba(59, 130, 246, 0.1);
@@ -63,37 +60,21 @@
         transform: translateY(-2px);
     }
     
-    /* Customer Agreement Styles */
     .agreement-content {
         scrollbar-width: thin;
         scrollbar-color: #4b5563 #1f2937;
     }
     
-    .agreement-content::-webkit-scrollbar {
-        width: 8px;
-    }
+    .agreement-content::-webkit-scrollbar { width: 8px; }
+    .agreement-content::-webkit-scrollbar-track { background: #1f2937; border-radius: 4px; }
+    .agreement-content::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 4px; }
+    .agreement-content::-webkit-scrollbar-thumb:hover { background: #6b7280; }
     
-    .agreement-content::-webkit-scrollbar-track {
-        background: #1f2937;
-        border-radius: 4px;
-    }
-    
-    .agreement-content::-webkit-scrollbar-thumb {
-        background: #4b5563;
-        border-radius: 4px;
-    }
-    
-    .agreement-content::-webkit-scrollbar-thumb:hover {
-        background: #6b7280;
-    }
-    
-    /* Checkbox custom styling */
     #agreementCheckbox:checked {
         background-color: #3b82f6;
         border-color: #3b82f6;
     }
     
-    /* Submit button disabled state */
     .submit-btn-disabled {
         opacity: 0.5;
         cursor: not-allowed;
@@ -106,20 +87,20 @@
   </style>
 </head>
 <body class="bg-black text-white">
-  <!-- Sticky Navigation Header with Glassmorphism -->
+  <!-- Sticky Navigation Header -->
   <header class="fixed top-0 w-full z-50 glass-header transition-all duration-300" id="navbar">
     <div class="container mx-auto px-6 py-4">
       <nav class="flex justify-between items-center">
         <div class="flex items-center space-x-3">
-          <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 md:h-20 w-auto">
+          <img src="Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 md:h-20 w-auto">
           <span class="text-xl font-bold text-white">Gympie Inflatable</span>
         </div>
-        <div class="hidden md:flex space-x-8">
-          <a href="Home.html" class="hover:text-blue-400 transition-colors duration-300 relative group">
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="hover:text-blue-400 transition-colors duration-300 relative group">
             Home
             <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="Home.html#packages" class="hover:text-blue-400 transition-colors duration-300 relative group">
+          <a href="index.html#packages" class="hover:text-blue-400 transition-colors duration-300 relative group">
             Packages
             <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
           </a>
@@ -127,30 +108,18 @@
             Bookings
             <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400"></span>
           </a>
-          <a href="about.html" class="hover:text-blue-400 transition-colors duration-300 relative group">
-            About
-            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-          </a>
-          <a href="contact.html" class="hover:text-blue-400 transition-colors duration-300 relative group">
-            Contact
-            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-          </a>
         </div>
-        <!-- Mobile menu button -->
         <button id="mobile-menu-btn" class="md:hidden text-white">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </nav>
-      <!-- Mobile menu -->
       <div class="md:hidden hidden" id="mobile-menu">
         <div class="pt-4 pb-3 space-y-3">
-          <a href="Home.html" class="block hover:text-blue-400 transition-colors">Home</a>
-          <a href="Home.html#packages" class="block hover:text-blue-400 transition-colors">Packages</a>
+          <a href="index.html" class="block hover:text-blue-400 transition-colors">Home</a>
+          <a href="index.html#packages" class="block hover:text-blue-400 transition-colors">Packages</a>
           <a href="bookings.html" class="block text-blue-400 font-semibold">Bookings</a>
-          <a href="about.html" class="block hover:text-blue-400 transition-colors">About</a>
-          <a href="contact.html" class="block hover:text-blue-400 transition-colors">Contact</a>
         </div>
       </div>
     </div>
@@ -159,11 +128,9 @@
   <!-- Main Content -->
   <main class="pt-20 pb-12">
     <div class="container mx-auto px-6">
-      <!-- Header Section -->
       <div class="text-center mb-16 animate-fade-in-up">
-        <!-- Logo -->
         <div class="mb-8 flex justify-center pt-16">
-          <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-28 md:h-36 w-auto drop-shadow-2xl">
+          <img src="Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-28 md:h-36 w-auto drop-shadow-2xl">
         </div>
         <h1 class="text-3xl md:text-4xl font-bold font-montserrat mb-6 tracking-tight">
           Check <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Availability</span>
@@ -173,13 +140,9 @@
         </p>
       </div>
 
-      <!-- Calendar Section -->
       <div class="max-w-5xl mx-auto">
-        <div id="calendar" class="animate-fade-in-up">
-          <!-- Calendar will be rendered here by JavaScript -->
-        </div>
+        <div id="calendar" class="animate-fade-in-up"></div>
         
-        <!-- Legend -->
         <div class="mt-12 flex justify-center">
           <div class="bg-gray-900 rounded-2xl p-8 border border-gray-800 card-elevated">
             <h3 class="text-xl font-semibold mb-6 text-center text-white">Legend</h3>
@@ -199,26 +162,17 @@
             </div>
           </div>
         </div>
-        
-        <!-- Test Button for Survey Modal -->
-        <div class="mt-8 flex justify-center">
-          <button onclick="openSurvey('2025-12-01')" 
-                  class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-            Test Survey Modal
-          </button>
-        </div>
       </div>
     </div>
   </main>
 
-  <!-- Modernized Survey Modal -->
+  <!-- Survey Modal -->
   <div id="surveyModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-75 backdrop-blur-sm">
     <div class="modal-enter bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-lg mx-4 max-h-[85vh] flex flex-col">
-      <!-- Progress Bar - Fixed Header -->
       <div class="p-5 pb-3 border-b border-gray-700 flex-shrink-0">
         <div class="flex justify-between items-center mb-3">
           <h2 class="text-2xl font-bold font-montserrat text-white"><i data-lucide="party-popper" class="w-6 h-6 inline text-blue-400"></i> Book Your Party</h2>
-          <button onclick="closeSurvey()" class="text-gray-400 hover:text-white text-xl">×</button>
+          <button onclick="closeSurvey()" class="text-gray-400 hover:text-white text-xl">&#215;</button>
         </div>
         <div class="w-full bg-gray-700 rounded-full h-1.5">
           <div id="progressBar" class="bg-gradient-to-r from-blue-400 to-blue-600 h-1.5 rounded-full transition-all duration-300" style="width: 20%"></div>
@@ -226,7 +180,6 @@
         <p class="text-xs text-gray-400 mt-1.5">Step <span id="currentStep">1</span> of 5</p>
       </div>
 
-      <!-- Scrollable Form Content -->
       <div class="flex-1 overflow-y-auto px-5 py-4">
         <form id="surveyForm" class="space-y-4">
         <!-- Step 1: Package Selection -->
@@ -234,9 +187,7 @@
           <h3 class="text-lg font-semibold mb-4 text-blue-400">Choose Your Perfect Package</h3>
           <div class="space-y-3">
             <p class="text-gray-300 text-sm mb-4">Select the package that best fits your celebration:</p>
-            
             <div class="grid gap-3">
-              <!-- Club Setup Package -->
               <label class="package-option cursor-pointer block">
                 <div class="package-card bg-gray-800 border-2 border-gray-600 rounded-lg p-4 hover:border-blue-400 transition-all duration-300 flex items-start" tabindex="0">
                   <input type="radio" name="package" value="Club Setup" required class="mr-3 mt-1" style="accent-color:#3b82f6;">
@@ -249,29 +200,16 @@
                       </div>
                       <p class="text-gray-400 text-xs mb-2">Perfect for parties and celebrations</p>
                       <div class="text-xs text-gray-300">
-                        <div class="flex items-center space-x-1">
-                          <span class="text-blue-400">✓</span>
-                          <span>Inflatable nightclub setup</span>
-                        </div>
-                        <div class="flex items-center space-x-1">
-                          <span class="text-blue-400">✓</span>
-                          <span>Professional lighting system</span>
-                        </div>
-                        <div class="flex items-center space-x-1">
-                          <span class="text-blue-400">✓</span>
-                          <span>Smoke machine effects</span>
-                        </div>
-                        <div class="flex items-center space-x-1">
-                          <span class="text-blue-400">✓</span>
-                          <span>Premium sound system</span>
-                        </div>
+                        <div class="flex items-center space-x-1"><span class="text-blue-400">&#10003;</span><span>Inflatable nightclub setup</span></div>
+                        <div class="flex items-center space-x-1"><span class="text-blue-400">&#10003;</span><span>Professional lighting system</span></div>
+                        <div class="flex items-center space-x-1"><span class="text-blue-400">&#10003;</span><span>Smoke machine effects</span></div>
+                        <div class="flex items-center space-x-1"><span class="text-blue-400">&#10003;</span><span>Premium sound system</span></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </label>
 
-              <!-- Cinema Setup Package -->
               <label class="package-option cursor-pointer block">
                 <div class="package-card bg-gray-800 border-2 border-gray-600 rounded-lg p-4 hover:border-red-400 transition-all duration-300 flex items-start" tabindex="0">
                   <input type="radio" name="package" value="Cinema Setup" required class="mr-3 mt-1" style="accent-color:#ef4444;">
@@ -284,29 +222,16 @@
                       </div>
                       <p class="text-gray-400 text-xs mb-2">Movie nights and entertainment</p>
                       <div class="text-xs text-gray-300">
-                        <div class="flex items-center space-x-1">
-                          <span class="text-red-400">✓</span>
-                          <span>Large cinema screen setup</span>
-                        </div>
-                        <div class="flex items-center space-x-1">
-                          <span class="text-red-400">✓</span>
-                          <span>HD projector system</span>
-                        </div>
-                        <div class="flex items-center space-x-1">
-                          <span class="text-red-400">✓</span>
-                          <span>Surround sound audio</span>
-                        </div>
-                        <div class="flex items-center space-x-1">
-                          <span class="text-red-400">✓</span>
-                          <span>Additional speaker system</span>
-                        </div>
+                        <div class="flex items-center space-x-1"><span class="text-red-400">&#10003;</span><span>Large cinema screen setup</span></div>
+                        <div class="flex items-center space-x-1"><span class="text-red-400">&#10003;</span><span>HD projector system</span></div>
+                        <div class="flex items-center space-x-1"><span class="text-red-400">&#10003;</span><span>Surround sound audio</span></div>
+                        <div class="flex items-center space-x-1"><span class="text-red-400">&#10003;</span><span>Additional speaker system</span></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </label>
 
-              <!-- Complete Package -->
               <label class="package-option cursor-pointer block">
                 <div class="package-card bg-gray-800 border-2 border-gray-600 rounded-lg p-4 hover:border-green-400 transition-all duration-300 flex items-start relative" tabindex="0">
                   <input type="radio" name="package" value="Complete Package" required class="mr-3 mt-1" style="accent-color:#22c55e;">
@@ -322,18 +247,9 @@
                       </div>
                       <p class="text-gray-400 text-xs mb-2">Everything included - best value!</p>
                       <div class="text-xs text-gray-300">
-                        <div class="flex items-center space-x-1">
-                          <span class="text-green-400">✓</span>
-                          <span>Everything from both packages</span>
-                        </div>
-                        <div class="flex items-center space-x-1">
-                          <span class="text-green-400">✓</span>
-                          <span>Switch between modes anytime</span>
-                        </div>
-                        <div class="flex items-center space-x-1">
-                          <span class="text-green-400">✓</span>
-                          <span>Save $149! Perfect for large events</span>
-                        </div>
+                        <div class="flex items-center space-x-1"><span class="text-green-400">&#10003;</span><span>Everything from both packages</span></div>
+                        <div class="flex items-center space-x-1"><span class="text-green-400">&#10003;</span><span>Switch between modes anytime</span></div>
+                        <div class="flex items-center space-x-1"><span class="text-green-400">&#10003;</span><span>Save $149! Perfect for large events</span></div>
                       </div>
                     </div>
                   </div>
@@ -444,9 +360,9 @@
           <h3 class="text-lg font-semibold mb-4 text-blue-400">Party Details</h3>
           <div class="space-y-3">
             <div>
-                    <label for="partyType" class="block text-xs font-medium text-gray-300 mb-1">What kind of party is it? *</label>
-                    <select id="partyType" name="partyType" required 
-                      class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
+              <label for="partyType" class="block text-xs font-medium text-gray-300 mb-1">What kind of party is it? *</label>
+              <select id="partyType" name="partyType" required 
+                class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
                 <option value="">Select your party type...</option>
                 <option value="Birthday Bash">Birthday Bash</option>
                 <option value="Hens/Bucks Night">Hens/Bucks Night</option>
@@ -459,9 +375,9 @@
               </select>
             </div>
             <div>
-                    <label for="partySize" class="block text-xs font-medium text-gray-300 mb-1">How many legends are you expecting? *</label>
-                    <select id="partySize" name="partySize" required 
-                      class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
+              <label for="partySize" class="block text-xs font-medium text-gray-300 mb-1">How many legends are you expecting? *</label>
+              <select id="partySize" name="partySize" required 
+                class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
                 <option value="">Select party size...</option>
                 <option value="Less than 15">Less than 15</option>
                 <option value="Less than 30">Less than 30</option>
@@ -470,9 +386,9 @@
               </select>
             </div>
             <div>
-                    <label for="vibe" class="block text-xs font-medium text-gray-300 mb-1">What's the vibe? Will there be drinking? *</label>
-                    <select id="vibe" name="vibe" required 
-                      class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
+              <label for="vibe" class="block text-xs font-medium text-gray-300 mb-1">What's the vibe? Will there be drinking? *</label>
+              <select id="vibe" name="vibe" required 
+                class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
                 <option value="">Select the vibe...</option>
                 <option value="Yes, 18+ event">Yes, it's an 18+ event</option>
                 <option value="Alcohol-free">No, it's alcohol-free</option>
@@ -480,13 +396,13 @@
               </select>
             </div>
             <div>
-                    <label for="ageGroup" class="block text-xs font-medium text-gray-300 mb-1">What's the age group of your party crew? *</label>
-                    <select id="ageGroup" name="ageGroup" required 
-                      class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
+              <label for="ageGroup" class="block text-xs font-medium text-gray-300 mb-1">What's the age group of your party crew? *</label>
+              <select id="ageGroup" name="ageGroup" required 
+                class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
                 <option value="">Select age group...</option>
                 <option value="Kids (under 12)">Kids (under 12)</option>
-                <option value="Teens (13-17)">Teens (13–17)</option>
-                <option value="Young Adults (18-25)">Young Adults (18–25)</option>
+                <option value="Teens (13-17)">Teens (13-17)</option>
+                <option value="Young Adults (18-25)">Young Adults (18-25)</option>
                 <option value="Adults Only (25+)">Adults Only (25+)</option>
                 <option value="Mixed Ages">Mixed Ages</option>
               </select>
@@ -499,23 +415,23 @@
           <h3 class="text-lg font-semibold mb-4 text-blue-400">Space & Setup Requirements</h3>
           <div class="space-y-3">
             <div>
-                    <label for="clearSpace" class="block text-xs font-medium text-gray-300 mb-1">Do you have a clear space with nothing overhead? *</label>
-                    <select id="clearSpace" name="clearSpace" required 
-                      class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
+              <label for="clearSpace" class="block text-xs font-medium text-gray-300 mb-1">Do you have a clear space with nothing overhead? *</label>
+              <select id="clearSpace" name="clearSpace" required 
+                class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
                 <option value="">Select...</option>
-                <option value="Yes, safe and clear">Yes – it's safe and clear!</option>
-                <option value="Not sure, will send pic">Not sure – I'll send a pic</option>
-                <option value="No, need help">No – I need help finding a spot</option>
+                <option value="Yes, safe and clear">Yes - it's safe and clear!</option>
+                <option value="Not sure, will send pic">Not sure - I'll send a pic</option>
+                <option value="No, need help">No - I need help finding a spot</option>
               </select>
             </div>
             <div>
-                    <label for="spaceSize" class="block text-xs font-medium text-gray-300 mb-1">Is your space at least 7m x 7m flat and accessible? *</label>
-                    <select id="spaceSize" name="spaceSize" required 
-                      class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
+              <label for="spaceSize" class="block text-xs font-medium text-gray-300 mb-1">Is your space at least 7m x 7m flat and accessible? *</label>
+              <select id="spaceSize" name="spaceSize" required 
+                class="w-full px-3 py-2 text-sm bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-white focus:border-transparent">
                 <option value="">Select...</option>
                 <option value="Yes, got the space">Yep, got the space!</option>
-                <option value="Just under, lets chat">Just under – let's chat</option>
-                <option value="Not sure, need to measure">Not sure – need to measure</option>
+                <option value="Just under, lets chat">Just under - let's chat</option>
+                <option value="Not sure, need to measure">Not sure - need to measure</option>
               </select>
             </div>
             <div>
@@ -530,40 +446,32 @@
         <div id="step5" class="step-content hidden">
           <h3 class="text-lg font-semibold mb-4 text-blue-400"><i data-lucide="clipboard-list" class="w-5 h-5 inline"></i> Customer Agreement</h3>
           <div class="space-y-4">
-            <!-- Agreement Document Placeholder -->
             <div class="bg-gray-800 border border-gray-600 rounded-lg p-4 max-h-60 overflow-y-auto agreement-content">
               <div class="text-center mb-6">
                 <h4 class="text-lg font-semibold text-white mb-2">Gympie Inflatable Nightclub - Terms & Conditions</h4>
                 <p class="text-sm text-gray-400">Please read the following agreement carefully</p>
               </div>
               
-              <!-- Placeholder Content - Replace with actual agreement -->
               <div class="text-sm text-gray-300 space-y-4">
                 <div class="p-4 bg-blue-900/20 border border-blue-600/30 rounded-lg">
-                  <p class="text-blue-300 font-semibold mb-2"><i data-lucide="file-text" class="w-4 h-4 inline"></i> Customer Agreement Content Will Be Placed Here</p>
-                  <p class="text-gray-400 text-xs">Gympie Inflatable Nightclub Agreement
-This agreement is between Gympie Inflatable Nightclub (“the Owner”) and the undersigned hirer (“the Customer”). By signing this agreement, the Customer acknowledges and accepts the following terms:</p>
+                  <p class="text-blue-300 font-semibold mb-2"><i data-lucide="file-text" class="w-4 h-4 inline"></i> Customer Agreement</p>
+                  <p class="text-gray-400 text-xs">This agreement is between Gympie Inflatable Nightclub ("the Owner") and the undersigned hirer ("the Customer"). By signing this agreement, the Customer acknowledges and accepts the following terms:</p>
                 </div>
                 
                 <div>
-                  <h5 class="font-semibold text-white mb-2">Sample Agreement Sections:</h5>
+                  <h5 class="font-semibold text-white mb-2">Agreement Sections:</h5>
                   <ul class="list-disc list-inside space-y-2 text-gray-300">
-                    <li><strong>Responsibility of Use:</strong> The inflatable nightclub and equipment are hired in good working condition.
-The Customer is responsible for the safe and careful use of all equipment during the hire period.
-The Customer must ensure that all guests use the inflatable nightclub in a safe and respectful manner.</li>
-                    <li><strong>Duty to Notify:</strong> If there are any issues with the equipment, weather conditions, or safety concerns, the Customer must immediately contact the Owner so the Owner can attend and, if possible, allow the service to continue</li>
-                    <li><strong>Acknowledgement of Risk:</strong> If there are any issues with the equipment, weather conditions, or safety concerns, the Customer must immediately contact the Owner so the Owner can attend and, if possible, allow the service to continue.</li>
-                    <li><strong>Liability:</strong> The Customer understands that use of the inflatable nightclub carries some risk of injury or property damage.
-The Owner places full trust in the Customer to manage and supervise the inflatable responsibly.
-By signing, the Customer agrees that the Owner is not responsible for any injuries, accidents, or damages that may occur during the hire period.</li>
-                    <li><strong>Care of Equipment:</strong> The Customer is responsible for any damage to the inflatable nightclub or equipment caused during the hire period, beyond normal wear and tear.
-Any costs for repairs or replacement may be charged to the Customer.</li>
+                    <li><strong>Responsibility of Use:</strong> The inflatable nightclub and equipment are hired in good working condition. The Customer is responsible for the safe and careful use of all equipment during the hire period. The Customer must ensure that all guests use the inflatable nightclub in a safe and respectful manner.</li>
+                    <li><strong>Duty to Notify:</strong> If there are any issues with the equipment, weather conditions, or safety concerns, the Customer must immediately contact the Owner so the Owner can attend and, if possible, allow the service to continue.</li>
+                    <li><strong>Acknowledgement of Risk:</strong> The Customer acknowledges that use of inflatable equipment carries inherent risks.</li>
+                    <li><strong>Liability:</strong> The Customer understands that use of the inflatable nightclub carries some risk of injury or property damage. The Owner places full trust in the Customer to manage and supervise the inflatable responsibly. By signing, the Customer agrees that the Owner is not responsible for any injuries, accidents, or damages that may occur during the hire period.</li>
+                    <li><strong>Care of Equipment:</strong> The Customer is responsible for any damage to the inflatable nightclub or equipment caused during the hire period, beyond normal wear and tear. Any costs for repairs or replacement may be charged to the Customer.</li>
                     <li><strong>Agreement:</strong> By signing below, the Customer confirms that they have read, understood, and agreed to the terms of this hire agreement.</li>
                   </ul>
                 </div>
+              </div>
             </div>
 
-            <!-- Agreement Checkbox -->
             <div class="bg-gray-800 border-2 border-gray-600 rounded-lg p-4">
               <label class="flex items-start space-x-3 cursor-pointer">
                 <input type="checkbox" id="agreementCheckbox" name="customerAgreement" required 
@@ -579,7 +487,6 @@ Any costs for repairs or replacement may be charged to the Customer.</li>
               </label>
             </div>
 
-            <!-- Agreement Status -->
             <div id="agreementStatus" class="hidden">
               <div class="bg-green-900/20 border border-green-600/30 rounded-xl p-4">
                 <div class="flex items-center space-x-3">
@@ -597,12 +504,12 @@ Any costs for repairs or replacement may be charged to the Customer.</li>
         </form>
       </div>
 
-      <!-- Navigation Buttons - Fixed Footer -->
+      <!-- Navigation Buttons -->
       <div class="border-t border-gray-700 p-5 pt-4 flex-shrink-0 bg-gray-900">
         <div class="flex justify-between">
           <button type="button" id="prevBtn" 
                   class="px-4 py-2 text-sm bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors duration-300 hidden">
-            ← Previous
+            &#8592; Previous
           </button>
           <div class="flex space-x-3 ml-auto">
             <button type="button" id="cancelBtn"
@@ -611,7 +518,7 @@ Any costs for repairs or replacement may be charged to the Customer.</li>
             </button>
             <button type="button" id="nextBtn"
                     class="px-4 py-2 text-sm bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
-              Next →
+              Next &#8594;
             </button>
             <button type="submit" id="submitBtn" class="px-4 py-2 text-sm bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 hidden">
               <i data-lucide="send" class="w-4 h-4 inline"></i> Submit Booking
@@ -626,24 +533,20 @@ Any costs for repairs or replacement may be charged to the Customer.</li>
   <footer class="bg-black border-t border-gray-800 py-12 mt-12">
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
-        <!-- Logo & Description -->
         <div class="md:col-span-1">
-          <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 w-auto mb-4">
+          <img src="Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 w-auto mb-4">
           <p class="text-gray-400 text-sm">The ultimate party experience in Gympie. Professional inflatable nightclub and cinema setup for unforgettable events.</p>
         </div>
         
-        <!-- Quick Links -->
         <div>
           <h4 class="text-white font-bold mb-4">Quick Links</h4>
           <ul class="space-y-2">
-            <li><a href="Home.html" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
-            <li><a href="about.html" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+            <li><a href="index.html" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+            <li><a href="index.html#packages" class="text-gray-400 hover:text-blue-400 transition-colors">Packages</a></li>
             <li><a href="bookings.html" class="text-gray-400 hover:text-blue-400 transition-colors">Book Now</a></li>
-            <li><a href="contact.html" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
           </ul>
         </div>
         
-        <!-- Contact Info -->
         <div>
           <h4 class="text-white font-bold mb-4">Contact Us</h4>
           <ul class="space-y-2 text-gray-400 text-sm">
@@ -661,6 +564,5 @@ Any costs for repairs or replacement may be charged to the Customer.</li>
   </footer>
 
   <script>lucide.createIcons();</script>
-
 </body>
 </html>

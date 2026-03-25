@@ -6,7 +6,7 @@
     <meta name="description" content="Gympie Inflatable Nightclub - The ultimate party experience! Book our inflatable nightclub, cinema setup, or complete package for your next event." />
     <meta name="keywords" content="inflatable nightclub, party rental, Gympie events, mobile nightclub, cinema setup, party entertainment" />
     <title>Gympie Inflatable Nightclub | Ultimate Party Experience</title>
-    <link rel="icon" type="image/png" href="../Full Logo.png" />
+    <link rel="icon" type="image/png" href="Full Logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -17,7 +17,6 @@
         body { font-family: 'Poppins', sans-serif; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
         
-        /* Custom animations */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -37,14 +36,12 @@
         .animate-scale-in { animation: scaleIn 0.5s ease-out; }
         .animate-slide-in-left { animation: slideInLeft 0.5s ease-out; }
         
-        /* Glassmorphism header */
         .glass-header {
             backdrop-filter: blur(10px);
             background: rgba(0, 0, 0, 0.8);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* Button hover effects */
         .btn-primary {
             background: linear-gradient(135deg, #3b82f6, #1d4ed8);
             color: #ffffff;
@@ -70,7 +67,6 @@
             transform: translateY(-2px);
         }
         
-        /* Package selection styles */
         .package-selector {
             transition: all 0.3s ease;
         }
@@ -84,7 +80,6 @@
             background: rgba(59, 130, 246, 0.1) !important;
         }
 
-        /* Parallax effect */
         .parallax {
             background-attachment: fixed;
             background-position: center;
@@ -92,7 +87,6 @@
             background-size: cover;
         }
 
-        /* Card depth */
         .card-elevated {
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.05);
         }
@@ -100,7 +94,6 @@
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59,130,246,0.2);
         }
 
-        /* Noise texture overlay */
         .noise-overlay::before {
             content: '';
             position: absolute;
@@ -113,22 +106,19 @@
 </head>
 <body class="bg-black text-white overflow-x-hidden">
 
-    <!-- Sticky Navigation Header with Glassmorphism -->
+    <!-- Sticky Navigation Header -->
     <header id="navbar" class="glass-header fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 md:h-20 w-auto">
+                    <img src="Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 md:h-20 w-auto">
                     <span class="text-xl font-bold text-white">Gympie Inflatable</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="Home.html" class="text-blue-400 font-semibold relative group">Home<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400"></span></a>
-                    <a href="Home.html#packages" class="text-white hover:text-blue-400 transition-colors duration-300 relative group">Packages<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="about.html" class="text-white hover:text-blue-400 transition-colors duration-300 relative group">About<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="contact.html" class="text-white hover:text-blue-400 transition-colors duration-300 relative group">Contact<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="index.html" class="text-blue-400 font-semibold relative group">Home<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400"></span></a>
+                    <a href="#packages" class="text-white hover:text-blue-400 transition-colors duration-300 relative group">Packages<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span></a>
                     <a href="bookings.html" class="btn-primary px-6 py-2 rounded-full text-white font-semibold hover:shadow-lg transition-all duration-300">
                         Book Now
                     </a>
@@ -145,10 +135,8 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
                 <div class="flex flex-col space-y-4">
-                    <a href="Home.html" class="text-blue-400 font-semibold">Home</a>
-                    <a href="Home.html#packages" class="text-white hover:text-blue-400 transition-colors duration-300">Packages</a>
-                    <a href="about.html" class="text-white hover:text-blue-400 transition-colors duration-300">About</a>
-                    <a href="contact.html" class="text-white hover:text-blue-400 transition-colors duration-300">Contact</a>
+                    <a href="index.html" class="text-blue-400 font-semibold">Home</a>
+                    <a href="#packages" class="text-white hover:text-blue-400 transition-colors duration-300">Packages</a>
                     <a href="bookings.html" class="btn-primary px-6 py-2 rounded-full text-white font-semibold inline-block text-center">
                         Book Now
                     </a>
@@ -157,20 +145,17 @@
         </nav>
     </header>
 
-    <!-- Modern Hero Section with Full-Width Background -->
+    <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden noise-overlay">
-        <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="../Nightclub_Main.jpg" alt="Nightclub Background" class="w-full h-full object-cover">
+            <img src="Nightclub_Main.jpg" alt="Nightclub Background" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-black/60 to-red-900/80"></div>
         </div>
         
-        <!-- Hero Content -->
         <div class="relative z-10 text-center px-6 max-w-6xl mx-auto pt-20">
             <div class="animate-fade-in-up">
-                <!-- Logo in Hero -->
                 <div class="mb-8 flex justify-center">
-                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-48 md:h-64 lg:h-80 w-auto drop-shadow-2xl animate-scale-in">
+                    <img src="Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-48 md:h-64 lg:h-80 w-auto drop-shadow-2xl animate-scale-in">
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-black font-montserrat mb-6 leading-none tracking-tight">
                     <span class="block text-white">PARTY</span>
@@ -181,7 +166,6 @@
                     Gympie's premier inflatable nightclub experience. Professional setup, premium sound, stunning lights.
                 </p>
                 
-                <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a href="bookings.html" class="btn-primary px-8 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 shadow-xl inline-flex items-center gap-2">
                         <i data-lucide="calendar-check" class="w-5 h-5"></i> Book Your Event
@@ -209,9 +193,7 @@
                 </p>
             </div>
             
-            <!-- Experience Cards Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <!-- Nightclub Experience -->
                 <div class="group relative bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-blue-500/40 transition-all duration-500 transform hover:-translate-y-2 card-elevated">
                     <div class="absolute top-4 right-4">
                         <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Popular</span>
@@ -227,7 +209,6 @@
                     </ul>
                 </div>
                 
-                <!-- Cinema Experience -->
                 <div class="group relative bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-blue-500/40 transition-all duration-500 transform hover:-translate-y-2 card-elevated">
                     <div class="mb-6 text-blue-400"><i data-lucide="clapperboard" class="w-10 h-10"></i></div>
                     <h3 class="text-xl font-bold mb-4 text-white">Cinema Setup</h3>
@@ -240,7 +221,6 @@
                     </ul>
                 </div>
                 
-                <!-- Complete Package -->
                 <div class="group relative bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-green-500/40 transition-all duration-500 transform hover:-translate-y-2 md:col-span-2 lg:col-span-1 card-elevated">
                     <div class="absolute top-4 right-4">
                         <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Best Value</span>
@@ -259,7 +239,7 @@
         </div>
     </section>
 
-    <!-- Modern Pricing Section -->
+    <!-- Pricing Section -->
     <section id="packages" class="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -271,7 +251,6 @@
                 </p>
             </div>
             
-            <!-- Pricing Cards -->
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Club Package -->
                 <div class="relative bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-blue-500/40 transition-all duration-500 transform hover:scale-105 group card-elevated">
@@ -373,7 +352,6 @@
                             Switch between modes anytime
                         </li>
                         <li class="flex items-center text-gray-300">
-                  
                             <span class="text-green-400 mr-3"><i data-lucide="check" class="w-4 h-4"></i></span>
                             Extended setup time
                         </li>
@@ -408,98 +386,31 @@
                 <a href="bookings.html" class="btn-primary px-8 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 shadow-xl inline-flex items-center gap-2">
                     <i data-lucide="calendar-check" class="w-5 h-5"></i> Book Now
                 </a>
-                <a href="contact.html" class="btn-secondary px-8 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
+                <a href="mailto:gympieinflatable.25@gmail.com" class="btn-secondary px-8 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
                     <i data-lucide="message-circle" class="w-5 h-5"></i> Get Quote
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- JavaScript for Interactions -->
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Package selection function
-        function selectPackage(packageName) {
-            // Store selected package in localStorage
-            localStorage.setItem('selectedPackage', packageName);
-            
-            // Redirect to bookings page
-            window.location.href = 'bookings.html';
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll reveal animation
-        function revealOnScroll() {
-            const elements = document.querySelectorAll('.scroll-reveal');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('animate-fade-in-up');
-                }
-            });
-        }
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('navbar');
-            if (header) {
-                if (window.scrollY > 100) {
-                    header.style.background = 'rgba(0, 0, 0, 0.9)';
-                } else {
-                    header.style.background = 'rgba(0, 0, 0, 0.8)';
-                }
-            }
-            
-            revealOnScroll();
-        });
-
-        // Initialize scroll reveal
-        window.addEventListener('load', revealOnScroll);
-        window.addEventListener('scroll', revealOnScroll);
-    </script>
-
     <!-- Footer -->
     <footer class="bg-black border-t border-gray-800 py-12">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <!-- Logo & Description -->
                 <div class="md:col-span-1">
-                    <img src="../Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 w-auto mb-4">
+                    <img src="Full Logo.PNG" alt="Gympie Inflatable Nightclub" class="h-16 w-auto mb-4">
                     <p class="text-gray-400 text-sm">The ultimate party experience in Gympie. Professional inflatable nightclub and cinema setup for unforgettable events.</p>
                 </div>
                 
-                <!-- Quick Links -->
                 <div>
                     <h4 class="text-white font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="Home.html" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="index.html" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="#packages" class="text-gray-400 hover:text-blue-400 transition-colors">Packages</a></li>
                         <li><a href="bookings.html" class="text-gray-400 hover:text-blue-400 transition-colors">Book Now</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 
-                <!-- Contact Info -->
                 <div>
                     <h4 class="text-white font-bold mb-4">Contact Us</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
@@ -516,6 +427,40 @@
         </div>
     </footer>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Package selection
+        function selectPackage(packageName) {
+            localStorage.setItem('selectedPackage', packageName);
+            window.location.href = 'bookings.html';
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('navbar');
+            if (header) {
+                header.style.background = window.scrollY > 100 ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
